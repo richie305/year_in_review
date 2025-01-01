@@ -1,0 +1,17 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folders
+venv/
+env/
+
+# Ignore log files
+*.log
+
+# Ignore CSVs and sensitive files
+*.csv
+credentials.json
+
+# Ignore system files
+.DS_Store
