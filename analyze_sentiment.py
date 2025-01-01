@@ -1,6 +1,7 @@
-from openai import OpenAI
 import logging
+import os
 import time
+from openai import OpenAI
 
 # Configure logging
 logging.basicConfig(
@@ -13,8 +14,12 @@ logging.basicConfig(
 )
 
 # Set your OpenAI API key (ensure this is handled securely in production environments)
-client = OpenAI(api_key='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')
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY is not set in the environment variables")
+
+print(f"Your API key is: {OPENAI_API_KEY}")
 MAX_CONTENT_LENGTH = 3000  # Adjust based on OpenAI's token limits
 
 def analyze_sentiment(emails):
