@@ -1,12 +1,18 @@
+# Description: This script authenticates the user and returns the credentials object.
+
+# Standard library imports
+import logging
 import os
 import pickle
+import traceback
+
+# Third-party imports
+import pandas as pd
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import logging
-# from fetch_emails import fetch_emails
+
+# Local application imports
 from analyze_sentiment import analyze_sentiment
-import pandas as pd
-import traceback
 
 # Configure logging
 logging.basicConfig(
